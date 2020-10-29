@@ -48,8 +48,7 @@ export class MessageHandler implements EventHandler {
             return;
         }
 
-        // Don't respond to bots
-        if (msg.author.bot) {
+        if (process.env.RESPOND_TO_BOT_MESSAGES !== 'true' && msg.author.bot) {
             return;
         }
 
