@@ -17,7 +17,7 @@ import {
     TimeCommand,
 } from './commands';
 import { GuildJoinHandler, GuildLeaveHandler, MessageHandler, ReactionHandler } from './events';
-import { ConfigSchema } from './models/config-models';
+
 import { GuildRepo, UserRepo } from './repos';
 import {
     LanguageService,
@@ -30,7 +30,7 @@ import {
 } from './services';
 import { DataAccess } from './services/database/data-access';
 
-let Config: ConfigSchema = require('../config/config.json');
+import Config from './config';
 
 async function start(): Promise<void> {
     let clientOptions: ClientOptions = {
