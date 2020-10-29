@@ -25,8 +25,7 @@ export class ReactionHandler implements EventHandler {
             return;
         }
 
-        // Don't respond to bots
-        if (reactor.bot) {
+        if (process.env.RESPOND_TO_BOT_REACTIONS !== 'true' && reactor.bot) {
             return;
         }
 
