@@ -1,7 +1,6 @@
 {
     "prefix": "-ft",
     "client": {
-        "token": "<DISCORD_BOT_TOKEN>",
         "intents": [
             "GUILDS",
             "GUILD_MEMBERS",
@@ -19,13 +18,6 @@
                 "sweepInterval": 30
             }
         }
-    },
-    "mysql": {
-        "host": "localhost",
-        "database": "<MYSQL_DATABASE_NAME>",
-        "user": "<MYSQL_USER>",
-        "password": "<MYSQL_PASSWORD>",
-        "connectionLimit": 10
     },
     "jobs": {
         "updateServerCount": {
