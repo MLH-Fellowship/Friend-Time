@@ -11,6 +11,8 @@ services:
     env_file: .env
     environment:
       MYSQL_HOST: mysql
+    depends_on:
+      - mysql
   mysql:
     image: mariadb
     restart: always
@@ -19,8 +21,6 @@ services:
     env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
-    ports:
-      - 3306:3306
   adminer:
     image: adminer
     restart: always
