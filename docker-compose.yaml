@@ -8,20 +8,17 @@ services:
     volumes:
       - .:/usr/src/app
     working_dir: /usr/src/app
+    env_file: .env
     environment:
       MYSQL_HOST: mysql
-      RESPOND_TO_BOT_MESSAGES: ${RESPOND_TO_BOT_MESSAGES}
-      RESPOND_TO_BOT_REACTIONS: ${RESPOND_TO_BOT_REACTIONS}
   mysql:
     image: mariadb
     restart: always
     volumes:
       - ./scripts:/docker-entrypoint-initdb.d
+    env_file: .env
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}  
     ports:
       - 3306:3306
   adminer:
